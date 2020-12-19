@@ -1,0 +1,6 @@
+# Specific files #
+##################
+idu_app/migrations
+idu_app/__pycache__
+idu/__pycache__
+idu/settings.py
