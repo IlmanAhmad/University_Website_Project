@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from idu_app.models import student
+from django.contrib import messages
 import pandas as pd
 
 # Create your views here.
 def home(request):
     """function to redirect to homepage"""
     
+    
+
+    return render(request,'idu_app/home.html')
+
+
+def studetails(request):
+    """This function is for uploading student details in database"""
     if request.method == "POST":
-        # stu_data = pd.read_excel(r'C:\Users\shane\PycharmProjects\pythonProject\Univeritywebsite\studentdata.xlsx')
-        stu_data = pd.read_excel(request.FILES.get('excelfile'))
-        data_length = range(len(stu_data))
+        
+        stu_data = pd.read_excel(request.FILES.get('excelfile')) # read file from html form
+        
+        data_length = range(len(stu_data)) # calculate length of file
 
         for i in data_length:
             """ Loop to run data loader for students data """
@@ -30,7 +39,7 @@ def home(request):
             stu_class= stu_class, stu_roll_no=stu_roll_no, stu_father_name=stu_father_name, stu_contact=stu_contact, 
             stu_mother_name=stu_mother_name, stu_address_line1=stu_address_line1, stu_address_line2=stu_address_line2, 
             stu_city=stu_city, stu_postalcode=stu_postalcode)
-            print(students)
             students.save()
-
-    return render(request,'idu_app/home.html')
+        messages.success(request, "Your student registeration data has been successfully uploaded.")
+        return render(request, 'idu_app/studetails.html')
+    return render(request, 'idu_app/studetails.html')

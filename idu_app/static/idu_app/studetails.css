@@ -1,0 +1,29 @@
+/* Set header tag font style */
+.headertag{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Set for heading properties */
+.heading{
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+/* Set botder properties */
+.data{
+    border: 2px solid black;
+}
+
+/* Set form data properties */
+.form-data{
+    background: rgb(233, 240, 222);
+    padding-left: 2px;
+    padding-bottom: 2px;
+}
+
+/* Set button properties */
+#submit{
+    background-color: black;
+    color: white;
+}
