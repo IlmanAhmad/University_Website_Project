@@ -11,11 +11,25 @@
         <div class="heading">
             <label>Student Registration Form </label>
         </div>
-        <form class="form-data" method="POST" action="/home/studetails/" enctype="multipart/form-data"> {% csrf_token %}
+        <form class="form-data" method="POST" action="/home/registeration/" enctype="multipart/form-data"> {% csrf_token %}
 
             <div class="my-3">
                 <label for="myfile">Select a file you want to Upload:</label>
                 <input style="background-color: black; color: white;" type="file" id="myfile" name="excelfile"><br>
+                <button id="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div class="data">
+        <div class="heading">
+            <label>Report Card Submission Form </label>
+        </div>
+        <form class="form-data" method="POST" action="/home/marksheet/" enctype="multipart/form-data"> {% csrf_token %}
+
+            <div class="my-3">
+                <label for="myfile">Select a file you want to Upload:</label>
+                <input style="background-color: black; color: white;" type="file" id="myfile" name="excelmarksfile"><br>
                 <button id="submit" type="submit">Submit</button>
             </div>
         </form>
