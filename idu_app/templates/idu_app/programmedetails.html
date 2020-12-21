@@ -1,0 +1,46 @@
+{% extends 'idu_app/basic.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'idu_app/programmedetails.css' %}">
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div style="overflow: auto; height: 600; margin-left:10px;" class="textcss">
+        <br /><center><h3><b>PROGRAMME LIST</b></h3></center>
+        <p><table border="3" width="100%" cellpadding="10" class="textcss" style="margin-right:10px;">
+            <tr>
+                <th class="tableheader">Programme Code</th>
+                <th class="tableheader">Programme Name</th>
+                <th class="tableheader">Duration</th>
+                <th class="tableheader">Medium</th>
+                <th class="tableheader">Eligibility Criteria</th>
+                <th class="tableheader">Total Fee</th>
+            </tr>
+            <tr>
+                <td class="tableheader">BCA</td>
+                <td class="tablebody">Bachelor of Computer Applications</td>
+                <td class="tablebody">Minimum : 3 years<br />Maximum : 6 years</td>
+                <td class="tablebody">English</td>
+                <td class="tablebody">10+2 or its equivalent.</td>
+                <td class="tablebody">Rs. 38700/-</td>
+            </tr>
+            <tr>
+                <td class="tableheader">MCA</td>
+                <td class="tablebody">Master of Computer Applications</td>
+                <td class="tablebody">Minimum : 3 years<br />Maximum : 6 years</td>
+                <td class="tablebody">English</td>
+                <td class="tablebody">Graduation degree or its equivalent with Mathmatics at +2 or Graduation level.</td>
+                <td class="tablebody">Rs. 45700/-</td>
+            </tr>
+            <tr>
+                <td class="tableheader">CIT</td>
+                <td class="tablebody">Certificate in Information Technology</td>
+                <td class="tablebody">Minimum : 6 months<br />Maximum : 2 years</td>
+                <td class="tablebody">English</td>
+                <td class="tablebody">10th Standard OR SSC OR IGNOU'S BPP or Microsoft's DLC or equivalent</td>
+                <td class="tablebody">Rs. 8000/-</td>
+            </tr>
+        </table></p>
+    </div>
+</div>
+{% endblock %}

@@ -11,6 +11,9 @@ def home(request):
 
     return render(request, 'idu_app/home.html')
 
+def programmedetails(request):
+    """function to redirect to programme details page"""
+    return render(request, 'idu_app/programmedetails.html')
 
 def studetails(request):
     """function to redirect to student details page"""

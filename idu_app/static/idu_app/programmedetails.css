@@ -1,0 +1,10 @@
+.tableheader{
+    text-align: center;
+    width: 170px;
+    background-color: black;
+    color: white;
+}
+
+.tablebody{
+    padding-left: 2px;
+}

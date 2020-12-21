@@ -74,29 +74,52 @@
 {% endblock %}
 
 {% block body %}
-<div class="container-fluid text-center">    
-    <div class="row content">
-      <div class="col-sm-2 sidenav">
-        <p><a href="studetails/">Student Details</a></p>
-        <p><a href="#">Link</a></p>
-        <p><a href="#">Link</a></p>
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="studetails/">Student Details</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h2>WELCOME TO INDIRA DELHI UNIVERSITY</h2>
+
+      <p>The Indira Delhi University (IDU), established by an Act of Parliament in 1990, has continuously striven to
+        build an inclusive knowledge society through inclusive education. It has tried to increase the Gross Enrollment
+        Ratio (GER) by offering high-quality teaching through the Open and Distance Learning (ODL) mode.</p>
+      <p>The University began by offering two academic programmes in 1990, i.e., Diploma in Management and Diploma in
+        Distance Education, with a strength of 3,200 students.</p>
+      <p>Today, it serves the educational aspirations of over 3 million students in India and other countries through 21
+        Schools of Studies and a network of 50 regional centres, around 2,500 learner support centres and 12 overseas
+        partner institutions. The University offers about 200 certificate, diploma, degree and doctoral programmes, with
+        a strength of nearly 1000 faculty members and 233 academic staff at the headquarters and regional centres and
+        about 23,212 academic counsellors from conventional institutions of higher learning, professional organisations,
+        and industry among others.</p>
+      <hr>
+      <h3>Objectives</h3>
+      <ul>
+        <li>
+          <p>Provide access to higher education to all segments of the society.</p>
+        <li>
+          <p>Offer high-quality, innovative and need-based programmes at different levels, to all those who require
+            them.</p>
+        <li>
+          <p>Reach out to the disadvantaged by offering programmes in all parts of the country at affordable costs.</p>
+        <li>
+          <p>Promote, coordinate and regulate the standards of education offered through open and distance learning in
+            the country.</p>
+      </ul>
+      <hr>
+      <img src="{% static 'idu_app/main.jpg' %}" style="width: 1320px;">
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
       </div>
-      <div class="col-sm-8 text-left"> 
-        <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <hr>
-        <h3>Test</h3>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="col-sm-2 sidenav">
-        <div class="well">
-          <p>ADS</p>
-        </div>
-        <div class="well">
-          <p>ADS</p>
-        </div>
+      <div class="well">
+        <p>ADS</p>
       </div>
     </div>
   </div>
-  {% endblock %}
-
+</div>
+{% endblock %}
