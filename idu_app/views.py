@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from idu_app.models import student, mark
+from idu_app.models import student, mark, contact
 from django.contrib import messages
 import pandas as pd
 
@@ -11,8 +11,24 @@ def home(request):
 
     return render(request, 'idu_app/home.html')
 
+def contactus(request):
+    """function to redirect to contact us page"""
+    if request.method == "POST":
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
+        contacts = contact(name=name, email=email, phone=phone, desc=desc)
+        contacts.save()
+        messages.success(
+            request, "Your request has been submitted. We'll revert back to you with details soon.")
+        return render(request, "idu_app/contact.html")
+    
+    return render(request, 'idu_app/contact.html')
+
 def programmedetails(request):
     """function to redirect to programme details page"""
+
     return render(request, 'idu_app/programmedetails.html')
 
 def studetails(request):
