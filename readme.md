@@ -1,13 +1,13 @@
-#Prerequisite
+# Prerequisite
 Python(Any version 3+)
 Postgres db(if you want to setup your database in postgres)
 
 
-#Installation
+# Installation
 
 `pip install -r requirements.txt`
 
-#Database
+# Database
 `db sqlite3` - No changes required
 
 `postgresql - Perform below steps in setting.py`
@@ -25,18 +25,18 @@ DATABASES = {
 }
 ```
 
-#For Window
+# For Window
 ```shell script
 python manage.py migrate
 python manage.py runserver
 ```
 
-#Super User Creation
+# Super User Creation
 ```shell script
 python manage.py createsuperuser
 Username : your_user
 email : your_email
 Password : your_pass
 ```
-#Demo
+# Demo
 [Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/demo.md "Demo")
