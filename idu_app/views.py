@@ -11,6 +11,7 @@ def home(request):
 
     return render(request, 'idu_app/home.html')
 
+
 def contactus(request):
     """function to redirect to contact us page"""
     if request.method == "POST":
@@ -23,18 +24,34 @@ def contactus(request):
         messages.success(
             request, "Your request has been submitted. We'll revert back to you with details soon.")
         return render(request, "idu_app/contact.html")
-    
+
     return render(request, 'idu_app/contact.html')
+
 
 def programmedetails(request):
     """function to redirect to programme details page"""
 
     return render(request, 'idu_app/programmedetails.html')
 
+
 def studetails(request):
     """function to redirect to student details page"""
 
     return render(request, 'idu_app/studetails.html')
+
+
+def results(request):
+    """function to redirect to student results page"""
+    if request.method == "POST":
+        stu_roll_no = request.POST.get('roll_no','')
+        mark_list = mark.objects.filter(stu_roll_no=stu_roll_no).values()
+        params = {'mark_list': mark_list}
+        print(params)
+        print(type(params))
+
+        return render(request, 'idu_app/results.html', params)
+
+    return render(request, 'idu_app/results.html')
 
 
 def registeration(request):

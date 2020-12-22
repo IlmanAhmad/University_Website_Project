@@ -1,0 +1,30 @@
+{% extends 'idu_app/basic.html' %}
+{% block title %} Results {% endblock %}
+{% block body %}
+<div class="container mt-3">
+    <h2><center>Examination Results</center></h2>
+    <form method="POST" action="/home/results/">{% csrf_token %}
+        <div class="form-group">
+            <label for="roll_no">Roll Number</label>
+            <input type="number" class="form-control" id="roll_no" name='roll_no' placeholder="Enter your roll_no">
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <div>
+            <br>
+        {% for i in mark_list %}
+        <h2><center>{{i.stu_full_name}}</center></h2>
+        <ul class="list-group mt-3">
+            <li class="list-group-item">Maths<span class="badge badge-pill">{{i.stu_sub1}}</span></li>
+            <li class="list-group-item">Science<span class="badge badge-pill">{{i.stu_sub2}}</span></li>
+            <li class="list-group-item">English<span class="badge badge-pill">{{i.stu_sub3}}</span></li>
+            <li class="list-group-item">Social Studies<span class="badge badge-pill">{{i.stu_sub4}}</span></li>
+            <li class="list-group-item">Computer<span class="badge badge-pill">{{i.stu_sub5}}</span></li>
+            
+        </ul>
+        {% endfor %}
+    </div>
+    </form>
+    
+    
+</div>
+{% endblock %}
