@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth import login, logout, authenticate
 from idu_app.models import student, mark, contact
 from django.contrib import messages
 import pandas as pd
@@ -10,6 +11,31 @@ def home(request):
     """function to redirect to homepage"""
 
     return render(request, 'idu_app/home.html')
+
+def handlelogin(request):
+    """function to handle login authentication"""
+    if request.method == "POST":
+        user = request.POST.get('user', '')
+        password = request.POST.get('password', '')
+        user = authenticate(request, username=user, password=password)
+        if user is not None:
+            request.session['uid'] = request.POST.get('user', '')
+            login(request, user)
+            messages.success(request, "Your login is successful.")
+            return redirect("idu:home")
+        else:
+            messages.error(request, "Invalid id or password")
+            return redirect("idu:home")
+    else:
+        return HttpResponse('404 - Not found')
+
+
+def handlelogout(request):
+    """function to handle logout authentication"""
+    logout(request)
+    messages.success(request, "Your have successfully logged out")
+    return redirect("idu:home")
+
 
 
 def contactus(request):
@@ -46,9 +72,6 @@ def results(request):
         stu_roll_no = request.POST.get('roll_no','')
         mark_list = mark.objects.filter(stu_roll_no=stu_roll_no).values()
         params = {'mark_list': mark_list}
-        print(params)
-        print(type(params))
-
         return render(request, 'idu_app/results.html', params)
 
     return render(request, 'idu_app/results.html')

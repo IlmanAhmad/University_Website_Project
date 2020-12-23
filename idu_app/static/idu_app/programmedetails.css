@@ -1,10 +1,11 @@
+/* Set table headers properties */
 .tableheader{
     text-align: center;
     width: 170px;
     background-color: black;
     color: white;
 }
-
+/* Set table body properties */
 .tablebody{
     padding-left: 2px;
 }

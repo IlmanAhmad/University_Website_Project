@@ -40,3 +40,15 @@ Password : your_pass
 ```
 # Demo
 [Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/demo.md "Demo")
+
+# Data Loader features - Admin only
+
+### *Sample file format to be used for uploading bulk student registeration data*
+[Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/studentdata.xlsx "Student_Data")
+
+### *Sample file format to be used for uploading bulk student marksheets data*
+[Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/marks.xlsx "Student_Data")
+
+- You need to log in as Admin to see the Admin button.
+- Select the excel sheet you want to upload.
+- Click on Submit.
