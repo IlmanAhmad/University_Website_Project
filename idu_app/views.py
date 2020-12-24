@@ -60,10 +60,20 @@ def programmedetails(request):
     return render(request, 'idu_app/programmedetails.html')
 
 
-def studetails(request):
-    """function to redirect to student details page"""
+def studetailsadmin(request):
+    """function to redirect to student details admin page"""
 
-    return render(request, 'idu_app/studetails.html')
+    return render(request, 'idu_app/studetailsadmin.html')
+
+def sturegisterdetails(request):
+    """function to redirect to student details page"""
+    if request.method == "POST":
+        stu_roll_no = request.POST.get('roll','')
+        stu_details = student.objects.filter(stu_roll_no=stu_roll_no).values()
+        params = {'stu_details': stu_details}
+        return render(request, 'idu_app/sturegisterdetails.html', params)
+
+    return render(request, 'idu_app/sturegisterdetails.html')
 
 
 def results(request):
@@ -108,7 +118,7 @@ def registeration(request):
             students.save()
         messages.success(
             request, "Your student registeration data has been successfully uploaded.")
-        return redirect("idu:studetails")
+        return redirect("idu:studetailsadmin")
     else:
         return HttpResponse('404 - Not found')
 
@@ -142,6 +152,6 @@ def marksheet(request):
                          stu_total_marks=stu_total_marks, stu_average_marks=stu_average_marks)
             marks.save()
         messages.success(request, "Marksheets has been successfully uploaded.")
-        return redirect("idu:studetails")
+        return redirect("idu:studetailsadmin")
     else:
         return HttpResponse('404 - Not found')

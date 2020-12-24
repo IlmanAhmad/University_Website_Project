@@ -1,0 +1,23 @@
+/* Set search button properties */
+.btn-dark {
+    background-color: black;
+    color: white;
+}
+/* Set form properties */
+.formclass {
+    background: rgb(233, 240, 222);
+    margin-top: 5px;
+    border: 2px solid black;
+}
+/* Set form bottom row properties */
+.bottomrow {
+    max-height: 35px;
+    margin-bottom: 4px;
+}
+/* Set form big fields properties */
+.big {
+    max-width: 555px;
+    max-height: 35px;
+}
+
+

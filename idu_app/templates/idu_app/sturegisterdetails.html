@@ -1,0 +1,69 @@
+{% extends 'idu_app/basic.html' %}
+
+{% block title %}Student Details{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+  <div class="regdata">
+    
+    <form class="row g-3 formclass" method="POST" accept="sturegisterdetails/">{% csrf_token %}
+      
+        <h2 style="background-color: black; color: white; text-align: center; margin-top: 0px;">Student Registeration Details</h2>
+      {% for i in stu_details %}
+      <!-- This loop will fetch the details of student from database -->
+      <div class="col-md-6">
+        <label for="fname" class="form-label">First name</label>
+        <textarea type="text" class="form-control big" id="fname" disabled>{{i.stu_first_name}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="lname" class="form-label">Last name</label>
+        <textarea type="text" class="form-control big" id="fname" disabled>{{i.stu_last_name}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="fathername" class="form-label">Father name</label>
+        <textarea type="text" class="form-control big" id="fathername" disabled>{{i.stu_father_name}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="mothername" class="form-label">Mother name</label>
+        <textarea type="text" class="form-control big" id="mothername" disabled>{{i.stu_mother_name}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress" class="form-label">Address</label>
+        <textarea type="text" class="form-control big" id="inputAddress" disabled>{{i.stu_address_line1}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <textarea type="text" class="form-control big" id="inputAddress2" disabled>{{i.stu_address_line2}}</textarea>
+      </div>
+      <div class="col-md-2">
+        <label for="inputCity" class="form-label">City</label>
+        <textarea type="text" class="form-control bottomrow" id="inputCity" disabled>{{i.stu_city}}</textarea>
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <textarea type="text" class="form-control bottomrow" id="inputZip" disabled>{{i.stu_postalcode}}</textarea>
+      </div>
+      <div class="col-md-2">
+        <label for="contact" class="form-label">Contact</label>
+        <textarea type="text" class="form-control bottomrow" id="contact" disabled>{{i.stu_contact}}</textarea>
+      </div>
+      <div class="col-md-2">
+        <label for="class" class="form-label">Class</label>
+        <textarea type="text" class="form-control bottomrow" id="class" disabled>{{i.stu_class}}</textarea>
+      </div>
+      {% endfor %}
+      <div class="col-md-2">
+        <label for="roll" class="form-label">Roll No</label>
+        <input type="text" class="form-control bottomrow" id="roll" name="roll" placeholder="Enter your Roll No">
+      </div>
+      <div class="col-md-2">
+        <label for="roll" class="form-label"></label>
+        <button type="submit" class="form-control bottomrow btn-dark" id="search"><b>Search</b></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
