@@ -1,6 +1,6 @@
 # Prerequisite
-Python(Any version 3+)
-Postgres db(if you want to setup your database in postgres)
+- Python(Any version 3+)
+- Postgres db(if you want to setup your database in postgres)
 
 
 # Installation
