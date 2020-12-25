@@ -23,7 +23,7 @@
 }
 
 /* Set button properties */
-#submit{
+.submit{
     background-color: black;
     color: white;
 }
