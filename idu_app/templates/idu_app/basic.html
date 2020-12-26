@@ -11,35 +11,14 @@
     <link rel="stylesheet" href="{% static 'idu_app/studetailsadmin.css' %}">
     <link rel="stylesheet" href="{% static 'idu_app/sturegisterdetails.css' %}">
     <link rel="stylesheet" href="{% static 'idu_app/programmedetails.css' %}">
+    <link rel="stylesheet" href="{% static 'idu_app/basic.css' %}">
+    <link rel="stylesheet" href="{% static 'idu_app/faculty.css' %}"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
     {% block js %} {% endblock %}
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
-        }
 
-        /* Set black background color, white text and some padding */
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-
-        .fade {
-            opacity: inherit;
-        }
-        
-    </style>
-    
 </head>
 
 <body>
@@ -57,11 +36,11 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/home">Home</a></li>
                     <li><a href="/home/programmedetails">Programme Details</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="/home/faculty">Faculty</a></li>
                     <li><a href="/home/contact">Contact</a></li>
                     {% if user.is_superuser %}
                     <!-- Display Admin button if user is super user -->
-                    <li><a id="admin" href="studetailsadmin/">Admin</a></li>
+                    <li><a id="admin" href="/home/studetailsadmin">Admin</a></li>
                     {% endif %}    
                 </ul>
                 
@@ -123,13 +102,14 @@
             </div>
         </div>
     </div>
+    
     {% block body %} {% endblock %}
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+        <p style="font-size: 16px;">&#169; 2020 Indira Delhi University</p>
+        <p>North Valley Road, South campus Delhi 110056</p>
     </footer>
-
 </body>
-{% load static %}
+
 <script src="{% static 'idu_app/basic.js' %}" type="text/javascript"></script>
 <script src="{% static 'idu_app/home.js' %}" type="text/javascript"></script>
 

@@ -1,0 +1,15 @@
+.faculty {
+    margin-top: 10px;
+    
+}
+
+.card-img-top {
+    max-height: 100px;
+    max-width: 20rem;
+}
+
+.card{
+    margin-bottom: 2px;
+    width: 35rem;
+    border: 2px solid black;
+}

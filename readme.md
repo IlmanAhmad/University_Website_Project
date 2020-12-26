@@ -49,6 +49,7 @@ Password : your_pass
 ### *Sample file format to be used for uploading bulk student marksheets data*
 [Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/marks.xlsx "Student_Data")
 
-- You need to log in as Admin to see the Admin button.
+- You need to log in as Admin to access Admin page.
 - Select the excel sheet you want to upload.
 - Click on Submit.
+- Click on Update in case you need to modify existing data.

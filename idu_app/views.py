@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import login, logout, authenticate
-from idu_app.models import student, mark, contact
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
+from idu_app.models import student, mark, contact, teacher
 from django.contrib import messages
 import pandas as pd
 
@@ -11,6 +13,12 @@ def home(request):
     """function to redirect to homepage"""
 
     return render(request, 'idu_app/home.html')
+
+def faculty(request):
+    """funtion to redirect to faculty details page"""
+    teachers = teacher.objects.all()
+    params = {'teachers': teachers}
+    return render(request, 'idu_app/faculty.html', params)
 
 
 def handlelogin(request):
@@ -30,7 +38,7 @@ def handlelogin(request):
     else:
         return HttpResponse('404 - Not found')
 
-
+@login_required
 def handlelogout(request):
     """function to handle logout authentication"""
     logout(request)
@@ -59,7 +67,7 @@ def programmedetails(request):
 
     return render(request, 'idu_app/programmedetails.html')
 
-
+@staff_member_required # restricting the URL to admin only users
 def studetailsadmin(request):
     """function to redirect to student details admin page"""
 

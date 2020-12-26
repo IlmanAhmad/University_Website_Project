@@ -5,3 +5,4 @@ from idu_app import models
 admin.site.register(models.student)
 admin.site.register(models.mark)
 admin.site.register(models.contact)
+admin.site.register(models.teacher)

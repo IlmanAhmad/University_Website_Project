@@ -1,0 +1,28 @@
+{% extends 'idu_app/basic.html' %}
+{% block title %} Faculties {% endblock %}
+{% block body %}
+
+
+<div class="container faculty">
+    <div class="row mb-2">
+      {% for teacher in teachers %}
+      <div class="col-md-6">
+        <div class="card">
+            <img src="/media/{{teacher.photo}}" class="card-img-top" alt="No Image">
+            <div class="card-body">
+              <h3 class="card-title"><b>{{teacher.name}}</b></h5>
+              <h4><b>{{teacher.designation}}</b></h3>
+              <p class="card-text">{{teacher.about|slice:"0:300"}}...</p>
+            </div>
+          </div>
+      </div>
+      {%if forloop.counter|divisibleby:2 %}
+    </div>
+    <div class="row mb-2">
+    {% endif %}
+    {% endfor %}
+  </div>
+  
+  </div>
+
+{% endblock %}

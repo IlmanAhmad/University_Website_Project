@@ -5,6 +5,7 @@ from idu_app import views
 app_name = 'idu'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('faculty/', views.faculty, name='faculty'),
     path('studetailsadmin/', views.studetailsadmin, name='studetailsadmin'),
     path('updatestudetailsadmin/', views.updatestudetailsadmin, name='updatestudetailsadmin'),
     path('sturegisterdetails/', views.sturegisterdetails, name='sturegisterdetails'),

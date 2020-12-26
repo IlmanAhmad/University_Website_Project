@@ -1,6 +1,17 @@
 from django.db import models
 
 # Create your models here.
+class teacher(models.Model):
+    """Faculty details form class"""
+
+    photo = models.ImageField(upload_to="home/images", default="")
+    name = models.CharField(max_length=255, default="")
+    designation = models.CharField(max_length=255, default="")
+    about = models.CharField(max_length=1000, default="")
+
+    def __str__(self):
+        return self.name
+
 class student(models.Model):
     """Student details form class"""
   
