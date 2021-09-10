@@ -1,3 +1,6 @@
+# Demo
+[Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/demo.md "Demo")
+
 # Prerequisite
 - Python(Any version 3+)
 - Postgres db(if you want to setup your database in postgres)
@@ -38,8 +41,6 @@ Username : your_user
 email : your_email
 Password : your_pass
 ```
-# Demo
-[Click here](https://github.com/IlmanAhmad/University_Website_Project/blob/main/demo.md "Demo")
 
 # Data Loader features - Admin only
 
